@@ -7,10 +7,26 @@ path = "/home/codemap/Documents/Projects/"
 
 print('This thing works only when SSH setup has been established.')
 
-folderName = str(sys.argv[1])
+folderName = input("Enter you project's name: ")
+if folderName == "":
+	while True:
+		folderName = input("Enter you project's name: ")
+		if folderName == "":
+			print('Enter a value!')
+			pass
+		else:
+			break
 username = input('Enter your github username: ')
+if username == "":
+	while True:
+		username = input("Enter you username: ")
+		if username == "":
+			print('Enter a value!')
+			pass
+		else:
+			break
 webbrowser.open('https://github.com/new')
-time.sleep(20)
+time.sleep(10)
 pyautogui.click(x=930, y=495)
 pyautogui.write(folderName)
 time.sleep(5)
